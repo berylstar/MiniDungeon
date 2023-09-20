@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] UnitStatsSO stats;
-    public UnitStatsSO Stats { get; private set; }
-    public int HP { get; private set; }
+    [Header("Player Stat")]
+    public UnitStatsSO stats;
+    public int hp;
+    public int exp;
+    public List<ItemSO> items = new List<ItemSO>() { null, null, null, null };
 
     private void Awake()
     {
-        Stats = stats;
-        HP = stats.MaxHp;
+        hp = stats.MaxHp;
     }
 }

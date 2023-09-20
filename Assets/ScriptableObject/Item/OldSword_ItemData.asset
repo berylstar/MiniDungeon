@@ -15,6 +15,8 @@ MonoBehaviour:
   itemName: "\uB0A1\uC740 \uAC80"
   type: 1
   image: {fileID: -267587109, guid: 6eb16e372762d6b4cb708c44ebfab931, type: 3}
-  explaination: "\uC624\uB7AB\uB3D9\uC548 \uC0AC\uC6A9\uD588\uB358 \uAC80\uC785\uB2C8\uB2E4."
+  explaination: "\uC0AC\uC6A9\uD55C \uD754\uC801\uC774 \uB0A8\uC544\uC788\uB2E4."
   effect: "\uACF5\uACA9\uB825 +1"
   price: 0
+  isAcquired: 1
+  isEquipped: 0

@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5bbdbd6720fe074b862862288d7cd3d, type: 3}
-  m_Name: SnakeSword_ItemData
+  m_Name: Kiwi_ItemData
   m_EditorClassIdentifier: 
-  itemName: "\uBC40 \uAC80"
-  type: 1
-  image: {fileID: 1936746835, guid: 6eb16e372762d6b4cb708c44ebfab931, type: 3}
-  explaination: "\uBC40\uCC98\uB7FC \uC720\uC5F0\uD55C \uAC80."
-  effect: "\uC2A4\uD53C\uB4DC +20"
-  price: 1200
+  itemName: "\uD0A4\uC704"
+  type: 3
+  image: {fileID: -462256797, guid: a03c2610221b14940b818fb271b448fa, type: 3}
+  explaination: 
+  effect: "\uACF5\uACA9\uB825 +1"
+  price: 0
   isAcquired: 1
   isEquipped: 0
