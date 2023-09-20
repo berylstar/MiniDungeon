@@ -13,9 +13,14 @@ public class IntroSceneScript : MonoBehaviour
     [Header("Nickname")]
     [SerializeField] GameObject objectNickname;
     [SerializeField] private TMP_InputField inputNickname;
+    private string nickname = "";
 
     [Header("Job")]
     [SerializeField] GameObject objectJob;
+
+    [Header("Characters")]
+    [SerializeField] private List<UnitStatsSO> characters = new List<UnitStatsSO>();
+    public UnitStatsSO nowPlayer;
 
     private void Start()
     {
@@ -31,28 +36,22 @@ public class IntroSceneScript : MonoBehaviour
         }
         else
         {
-            GameManager.nickname = inputNickname.text;
+            nickname = inputNickname.text;
             animator.SetTrigger(ButtonNext);
         }
     }
 
-    public void SetJob(int idx)
+    public void SetCharacter(int idx)
     {
-        //switch (idx)
-        //{
-        //    case 0:
-        //        Debug.Log("검사");
-        //        break;
+        nowPlayer.nickname = nickname;
+        nowPlayer.image = characters[idx].image;
+        nowPlayer.level = characters[idx].level;
+        nowPlayer.MaxHp = characters[idx].MaxHp;
+        nowPlayer.ap = characters[idx].ap;
+        nowPlayer.dp = characters[idx].dp;
+        nowPlayer.speed = characters[idx].speed;
+        nowPlayer.gold = characters[idx].gold;
 
-        //    case 1:
-        //        Debug.Log("전사");
-        //        break;
-
-        //    case 2:
-        //        Debug.Log("도적");
-        //        break;
-        //}
-        GameManager.character = idx;
         SceneManager.LoadScene("MainScene");
     }
 }

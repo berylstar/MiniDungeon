@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f09e4a5e16c3d584e89cdf88ce342dbf, type: 3}
-  m_Name: playerData
+  m_Name: nowPlayer
   m_EditorClassIdentifier: 
-  unitName: "\uC2AC\uB77C\uC784"
-  level: 1
+  nickname: 
+  image: {fileID: 0}
+  level: 0
+  MaxHp: 0
   ap: 0
   dp: 0
   speed: 0
+  gold: 0

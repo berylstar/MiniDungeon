@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 157498641}
   - component: {fileID: 157498640}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: ButtonGhost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -398,7 +398,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1941992027}
         m_TargetAssemblyTypeName: IntroSceneScript, Assembly-CSharp
-        m_MethodName: SetJob
+        m_MethodName: SetCharacter
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -544,7 +544,7 @@ MonoBehaviour:
   m_CharacterValidation: 0
   m_RegexValue: 
   m_GlobalPointSize: 14
-  m_CharacterLimit: 8
+  m_CharacterLimit: 6
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls: []
@@ -1287,7 +1287,7 @@ GameObject:
   - component: {fileID: 812599742}
   - component: {fileID: 812599741}
   m_Layer: 5
-  m_Name: Button
+  m_Name: ButtonSlime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1361,7 +1361,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1941992027}
         m_TargetAssemblyTypeName: IntroSceneScript, Assembly-CSharp
-        m_MethodName: SetJob
+        m_MethodName: SetCharacter
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1422,7 +1422,7 @@ GameObject:
   - component: {fileID: 891909995}
   - component: {fileID: 891909994}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: ButtonSkel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1496,7 +1496,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1941992027}
         m_TargetAssemblyTypeName: IntroSceneScript, Assembly-CSharp
-        m_MethodName: SetJob
+        m_MethodName: SetCharacter
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2602,3 +2602,8 @@ MonoBehaviour:
   objectNickname: {fileID: 529456681}
   inputNickname: {fileID: 241636698}
   objectJob: {fileID: 323373998}
+  characters:
+  - {fileID: 11400000, guid: ea2668e3eb777594c8f9510b5cdf3fcb, type: 2}
+  - {fileID: 11400000, guid: 8e072348f53491e49bfd27e3209d77a7, type: 2}
+  - {fileID: 11400000, guid: 29b9a04e5b878f043a179dd86baf32e9, type: 2}
+  nowPlayer: {fileID: 11400000, guid: 435f30abca7d8124eba7fee375fbc1ab, type: 2}
