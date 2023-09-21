@@ -17,8 +17,11 @@ MonoBehaviour:
   image: {fileID: 1008709038, guid: 6eb16e372762d6b4cb708c44ebfab931, type: 3}
   explaination: "\uC190\uC7A1\uC774\uB3C4 \uB728\uAC81\uC2B5\uB2C8\uB2E4."
   effect: "\uACF5\uACA9\uB825 +7\n\uCD5C\uB300\uCCB4\uB825 -15"
-  statChangers: {fileID: 11400000, guid: c0953f60248117b4a8b14d10257879a2, type: 2}
   price: 800
   isAcquired: 1
   inventoryIndex: 1
   isEquipped: 0
+  maxHp: -15
+  ap: 7
+  dp: 0
+  speed: 0

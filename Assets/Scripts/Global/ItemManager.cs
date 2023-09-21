@@ -89,12 +89,9 @@ public class ItemManager : MonoBehaviour
 
     private void EffectOrUneffectItem(ItemSO data, bool onoff)
     {
-        if (data.statChangers == null)
-            return;
-
         player.items[(int)data.type] = (onoff) ? data : null;
 
-        player.ChangeStats(data.statChangers, onoff);
+        player.ChangeStats(data, onoff);
 
         inventoryButton[data.inventoryIndex].transform.GetChild(0).gameObject.SetActive(onoff);
     }

@@ -2507,19 +2507,10 @@ MonoBehaviour:
   - {fileID: 1958331517}
   - {fileID: 1686656629}
   acquiredItems:
+  - {fileID: 11400000, guid: 99970aa7c789db24c9722a72e9afa395, type: 2}
   - {fileID: 11400000, guid: 4f15b17797ad10a41952d4bf0acfcf5c, type: 2}
   - {fileID: 11400000, guid: 39b96569f3faead45b83082b0ff45bc5, type: 2}
-  forSaleItems:
-  - {fileID: 11400000, guid: 9c4b474c0df92f74897d8f631948a9fc, type: 2}
-  - {fileID: 11400000, guid: 30dd786debcbc844cb9c2d05fdbeceb0, type: 2}
-  - {fileID: 11400000, guid: e2070be9f73d1f64eb1b5105dde5563c, type: 2}
-  - {fileID: 11400000, guid: a5e865fa1a9dd0c44b8857a66b0010c8, type: 2}
-  - {fileID: 11400000, guid: 5b4e92bb48f2d7f45a243be543d44733, type: 2}
-  - {fileID: 11400000, guid: 56fd05f402cfa3e4488390166da587f2, type: 2}
-  - {fileID: 11400000, guid: 78c1626beccd9ec4ea6926d4556e28b6, type: 2}
-  - {fileID: 11400000, guid: d11681ba1f8ca91468a85d0e574ac204, type: 2}
-  - {fileID: 11400000, guid: 1f7370500a3aa294289da8f6783dc6f9, type: 2}
-  - {fileID: 11400000, guid: 40965048a2ad5db48a09c0569f3a7b85, type: 2}
+  forSaleItems: []
   playerStatsUI: {fileID: 565140763}
   panelPopup: {fileID: 99297631}
   imagePopup: {fileID: 408988306}

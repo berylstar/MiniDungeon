@@ -17,8 +17,11 @@ MonoBehaviour:
   image: {fileID: -1337796959, guid: a03c2610221b14940b818fb271b448fa, type: 3}
   explaination: "\uD55C \uAC1C \uC815\uB3C4"
   effect: "\uC2A4\uD53C\uB4DC +5"
-  statChangers: {fileID: 11400000, guid: 7f101c6cfb33aa54aae0e87c49ca121c, type: 2}
   price: 0
   isAcquired: 0
   inventoryIndex: -1
   isEquipped: 0
+  maxHp: 0
+  ap: 0
+  dp: 0
+  speed: 5

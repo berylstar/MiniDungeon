@@ -19,11 +19,16 @@ public class ItemSO : ScriptableObject
     public Sprite image;
     [Multiline(2)] public string explaination;
     [Multiline(2)] public string effect;
-    public UnitStatsSO statChangers;
     public int price;
 
     [Header("Item Status")]
     public bool isAcquired = false;
     public int inventoryIndex = -1;
     public bool isEquipped = false;
+
+    [Header("Stat Changer")]
+    public int maxHp;
+    public int ap;
+    public int dp;
+    public int speed;
 }

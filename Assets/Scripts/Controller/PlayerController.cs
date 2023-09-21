@@ -16,11 +16,11 @@ public class PlayerController : MonoBehaviour
         exp = 0;
     }
 
-    public void ChangeStats(UnitStatsSO other, bool onoff)
+    public void ChangeStats(ItemSO other, bool onoff)
     {
         int pm = onoff ? 1 : -1;
 
-        stats.MaxHp += other.MaxHp * pm;
+        stats.MaxHp += other.maxHp * pm;
         hp = Mathf.Min(hp, stats.MaxHp);
 
         stats.ap += other.ap * pm;

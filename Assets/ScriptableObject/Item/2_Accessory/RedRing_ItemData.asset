@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5bbdbd6720fe074b862862288d7cd3d, type: 3}
-  m_Name: SnakeSword_ItemData
+  m_Name: RedRing_ItemData
   m_EditorClassIdentifier: 
-  itemName: "\uC2A4\uB124\uC774\uD06C \uC18C\uB4DC"
-  type: 1
-  image: {fileID: 1936746835, guid: 6eb16e372762d6b4cb708c44ebfab931, type: 3}
-  explaination: "\uBC40\uCC98\uB7FC \uC720\uC5F0\uD55C \uAC80."
-  effect: "\uC2A4\uD53C\uB4DC +20"
-  price: 1200
+  itemName: "\uBD89\uC740 \uBC18\uC9C0"
+  type: 2
+  image: {fileID: 21300000, guid: ae1860c92a16d04439186a18ab5d9725, type: 3}
+  explaination: "\uC0DD\uBA85\uC744 \uC5F0\uC7A5\uC2DC\uCF1C\uC90D\uB2C8\uB2E4."
+  effect: "\uACF5\uACA9\uB825 -2\n\uCD5C\uB300\uCCB4\uB825 +20"
+  price: 1500
   isAcquired: 0
   inventoryIndex: -1
   isEquipped: 0
-  maxHp: 0
-  ap: 0
+  maxHp: 20
+  ap: -2
   dp: 0
-  speed: 20
+  speed: 0
