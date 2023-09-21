@@ -15,17 +15,17 @@ public class IntroSceneScript : MonoBehaviour
     [SerializeField] private TMP_InputField inputNickname;
     private string nickname = "";
 
-    [Header("Job")]
-    [SerializeField] GameObject objectJob;
+    [Header("Character")]
+    [SerializeField] GameObject objectCharacter;
 
-    [Header("Characters")]
+    [Header("Default Characters")]
     [SerializeField] private List<UnitStatsSO> characters = new List<UnitStatsSO>();
     public UnitStatsSO nowPlayer;
 
     private void Start()
     {
         objectNickname.SetActive(true);
-        objectJob.SetActive(false);
+        objectCharacter.SetActive(false);
     }
 
     public void OnButtonNext()

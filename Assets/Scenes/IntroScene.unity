@@ -2601,7 +2601,7 @@ MonoBehaviour:
   animator: {fileID: 1941992026}
   objectNickname: {fileID: 529456681}
   inputNickname: {fileID: 241636698}
-  objectJob: {fileID: 323373998}
+  objectCharacter: {fileID: 323373998}
   characters:
   - {fileID: 11400000, guid: ea2668e3eb777594c8f9510b5cdf3fcb, type: 2}
   - {fileID: 11400000, guid: 8e072348f53491e49bfd27e3209d77a7, type: 2}

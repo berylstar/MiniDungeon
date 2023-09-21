@@ -33,9 +33,9 @@ public class PlayerStatsUI : MonoBehaviour
         textNickname.text = player.stats.nickname;
         textLevel.text = $"Lv.{player.stats.level}";
         imagePlayer.sprite = player.stats.image;
-        hpBar.value = player.hp / player.stats.MaxHp;
+        hpBar.value = player.hp / (float)player.stats.MaxHp;
         textHP.text = $"{player.hp}/{player.stats.MaxHp}";
-        expBar.value = player.exp / (player.stats.level + 5);
+        expBar.value = player.exp / (float)(player.stats.level + 5);
         textEXP.text = $"{player.exp}/{player.stats.level + 5}";
     }
 

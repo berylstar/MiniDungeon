@@ -17,10 +17,8 @@ public class ItemSO : ScriptableObject
     public string itemName;
     public ItemType type;
     public Sprite image;
-    [Multiline(2)]
-    public string explaination;
-    [Multiline(2)]
-    public string effect;
+    [Multiline(2)] public string explaination;
+    [Multiline(2)] public string effect;
     public UnitStatsSO statChangers;
     public int price;
 

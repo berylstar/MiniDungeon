@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f09e4a5e16c3d584e89cdf88ce342dbf, type: 3}
-  m_Name: Default_Slime
+  m_Name: Banana_Stats
   m_EditorClassIdentifier: 
   nickname: 
-  image: {fileID: 21300000, guid: 23f20205329035c408a13383745d7fc7, type: 3}
-  level: 1
-  MaxHp: 100
-  ap: 5
+  image: {fileID: 0}
+  level: 0
+  MaxHp: 0
+  ap: 1
   dp: 0
-  speed: 5
-  gold: 1000
+  speed: 10
+  gold: 0

@@ -4,14 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class InventoryManager : MonoBehaviour
+public class ItemManager : MonoBehaviour
 {
     [SerializeField] private PlayerController player;
+    
 
+    [Header("Inventory")]
     public List<GameObject> inventoryButton = new List<GameObject>();
     public List<ItemSO> acquiredItems = new List<ItemSO>();
 
+    [Header("Shop")]
+    public List<ItemSO> forSaleItems = new List<ItemSO>();
+
     [Header("Panel Pop Up")]
+    [SerializeField] private PlayerStatsUI playerStatsUI;
     [SerializeField] private GameObject panelPopup;
     [SerializeField] private Image imagePopup;
     [SerializeField] private TextMeshProUGUI textName;
@@ -26,7 +32,10 @@ public class InventoryManager : MonoBehaviour
         {
             inventoryButton[i].GetComponent<Image>().sprite = acquiredItems[i].image;
             acquiredItems[i].inventoryIndex = i;
+            acquiredItems[i].isAcquired = true;
+            acquiredItems[i].isEquipped = false;
         }
+
     }
 
     public void PickItem(int index)
@@ -74,6 +83,8 @@ public class InventoryManager : MonoBehaviour
         }
         
         popupIndex = -1;
+
+        playerStatsUI.ShowDefaultUI();
     }
 
     private void EffectOrUneffectItem(ItemSO data, bool onoff)
@@ -83,7 +94,7 @@ public class InventoryManager : MonoBehaviour
 
         player.items[(int)data.type] = (onoff) ? data : null;
 
-        player.stats.ChangeStats(data.statChangers, onoff);
+        player.ChangeStats(data.statChangers, onoff);
 
         inventoryButton[data.inventoryIndex].transform.GetChild(0).gameObject.SetActive(onoff);
     }

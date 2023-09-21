@@ -15,4 +15,16 @@ public class PlayerController : MonoBehaviour
         hp = stats.MaxHp;
         exp = 0;
     }
+
+    public void ChangeStats(UnitStatsSO other, bool onoff)
+    {
+        int pm = onoff ? 1 : -1;
+
+        stats.MaxHp += other.MaxHp * pm;
+        hp = Mathf.Min(hp, stats.MaxHp);
+
+        stats.ap += other.ap * pm;
+        stats.dp += other.dp * pm;
+        stats.speed += other.speed * pm;
+    }
 }

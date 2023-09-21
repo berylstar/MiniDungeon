@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Abyss_ItemData
   m_EditorClassIdentifier: 
   itemName: "\uC2EC\uC5F0\uC758 \uBB34\uAE30"
-  type: 0
+  type: 1
   image: {fileID: -460413151, guid: 6eb16e372762d6b4cb708c44ebfab931, type: 3}
   explaination: "\uC2EC\uC5F0 \uAE4A\uC740 \uACF3\uC5D0\uC11C \uAEBC\uB0C8\uC2B5\uB2C8\uB2E4."
   effect: "\uACF5\uACA9\uB825 +10"
   statChangers: {fileID: 11400000, guid: cd9114a4d23e56d42a5210374330decd, type: 2}
   price: 2500
-  isAcquired: 0
-  inventoryIndex: -1
+  isAcquired: 1
+  inventoryIndex: 0
   isEquipped: 0

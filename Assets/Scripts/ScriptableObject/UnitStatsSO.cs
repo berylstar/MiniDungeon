@@ -14,15 +14,4 @@ public class UnitStatsSO : ScriptableObject
     public int dp;
     public int speed;
     public int gold;
-
-
-    public void ChangeStats(UnitStatsSO other, bool onoff)
-    {
-        int pm = onoff ? 1 : -1;
-
-        MaxHp += other.MaxHp * pm;
-        ap += other.ap * pm;
-        dp += other.dp * pm;
-        speed += other.speed * pm;
-    }
 }

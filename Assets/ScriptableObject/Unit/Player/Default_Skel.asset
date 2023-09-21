@@ -15,7 +15,7 @@ MonoBehaviour:
   nickname: 
   image: {fileID: 21300000, guid: ad11ed433453c804a8ed908d2a8a580b, type: 3}
   level: 1
-  MaxHp: 25
+  MaxHp: 100
   ap: 4
   dp: 10
   speed: 5

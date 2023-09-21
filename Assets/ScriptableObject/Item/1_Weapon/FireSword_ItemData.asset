@@ -19,6 +19,6 @@ MonoBehaviour:
   effect: "\uACF5\uACA9\uB825 +7\n\uCD5C\uB300\uCCB4\uB825 -15"
   statChangers: {fileID: 11400000, guid: c0953f60248117b4a8b14d10257879a2, type: 2}
   price: 800
-  isAcquired: 0
-  inventoryIndex: -1
+  isAcquired: 1
+  inventoryIndex: 1
   isEquipped: 0
