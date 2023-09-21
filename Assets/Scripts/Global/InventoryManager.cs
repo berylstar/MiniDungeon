@@ -7,11 +7,10 @@ using TMPro;
 public class InventoryManager : MonoBehaviour
 {
     private PlayerController player;
+    [SerializeField] private PlayerStatsUI playerStatsUI;
     [SerializeField] private ShopManager shop;
 
     [Header("Inventory")]
-    [SerializeField] private PlayerStatsUI playerStatsUI;
-
     [SerializeField] private GameObject panelPopup;
     [SerializeField] private Image imagePopup;
     [SerializeField] private TextMeshProUGUI textName;
@@ -31,11 +30,24 @@ public class InventoryManager : MonoBehaviour
         for (int i = 0; i < acquiredItems.Count; i++)
         {
             acquiredItems[i] = Instantiate(acquiredItems[i]);
+        }
 
-            inventoryButton[i].GetComponent<Image>().sprite = acquiredItems[i].image;
-            acquiredItems[i].inventoryIndex = i;
-            acquiredItems[i].isAcquired = true;
-            acquiredItems[i].isEquipped = false;
+        ShowInventory();
+    }
+
+    public void ShowInventory()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            if (i < acquiredItems.Count)
+            {
+                inventoryButton[i].GetComponent<Image>().sprite = acquiredItems[i].image;
+                acquiredItems[i].inventoryIndex = i;
+            }
+            else
+            {
+                inventoryButton[i].GetComponent<Image>().sprite = null;
+            }
         }
     }
 
@@ -105,27 +117,18 @@ public class InventoryManager : MonoBehaviour
         player.stats.gold += (int)(nowItem.price * 0.5f);
         EffectOrUneffectItem(nowItem, false);
 
-        nowItem.isAcquired = false;
-        nowItem.isEquipped = false;
-
-        shop.forSaleItems.Add(nowItem);
+        shop.GetSoldItem(nowItem);
         acquiredItems.RemoveAt(ii);
 
         ii = -1;
 
-        for (int i = 0; i < 10; i++)
-        {
-            if (i < acquiredItems.Count)
-            {
-                inventoryButton[i].GetComponent<Image>().sprite = acquiredItems[i].image;
-                acquiredItems[i].inventoryIndex = i;
-            }
-            else
-            {
-                inventoryButton[i].GetComponent<Image>().sprite = null;
-            }
-        }
-
         playerStatsUI.ShowDefaultUI();
+        ShowInventory();
+    }
+
+    public void GetBuyItem(ItemSO nowItem)
+    {
+        nowItem.isAcquired = true;
+        acquiredItems.Add(nowItem);
     }
 }

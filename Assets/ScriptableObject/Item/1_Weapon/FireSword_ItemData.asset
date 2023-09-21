@@ -18,8 +18,8 @@ MonoBehaviour:
   explaination: "\uC190\uC7A1\uC774\uB3C4 \uB728\uAC81\uC2B5\uB2C8\uB2E4."
   effect: "\uACF5\uACA9\uB825 +7\n\uCD5C\uB300\uCCB4\uB825 -15"
   price: 800
-  isAcquired: 1
-  inventoryIndex: 1
+  isAcquired: 0
+  inventoryIndex: -1
   isEquipped: 0
   maxHp: -15
   ap: 7

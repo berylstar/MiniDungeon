@@ -972,7 +972,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 151559961}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 603939907}
+        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
+        m_MethodName: PickItem
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &151559961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1817,8 +1829,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d2524f2a9c98b249b1e0728edf6f06d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shop: {fileID: 603939907}
   playerStatsUI: {fileID: 565140763}
+  shop: {fileID: 603939907}
   panelPopup: {fileID: 99297631}
   imagePopup: {fileID: 408988306}
   textName: {fileID: 1595778787}
@@ -1940,6 +1952,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 309774668}
+        m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
+        m_MethodName: ShowInventory
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2447,7 +2471,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 390140009}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 603939907}
+        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
+        m_MethodName: PickItem
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &390140009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3344,7 +3380,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 558255735}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 603939907}
+        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
+        m_MethodName: PickItem
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &558255735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3844,6 +3892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb34e72356e669f43a064ee82e43f631, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerStatsUI: {fileID: 565140763}
   inven: {fileID: 309774668}
   panelPopup: {fileID: 846037502}
   imagePopup: {fileID: 35304838}
@@ -3851,13 +3900,35 @@ MonoBehaviour:
   textGold: {fileID: 1020561233}
   textExplanation: {fileID: 807604565}
   textEffect: {fileID: 1458412639}
+  buttonBuy: {fileID: 1267330765}
   shopButton:
   - {fileID: 558255732}
   - {fileID: 613935654}
   - {fileID: 390140006}
   - {fileID: 1292107239}
   - {fileID: 151559958}
-  forSaleItems: []
+  forSaleItems:
+  - {fileID: 11400000, guid: 5b4e92bb48f2d7f45a243be543d44733, type: 2}
+  - {fileID: 11400000, guid: a5e865fa1a9dd0c44b8857a66b0010c8, type: 2}
+  - {fileID: 11400000, guid: e2070be9f73d1f64eb1b5105dde5563c, type: 2}
+  - {fileID: 11400000, guid: 30dd786debcbc844cb9c2d05fdbeceb0, type: 2}
+  - {fileID: 11400000, guid: 9c4b474c0df92f74897d8f631948a9fc, type: 2}
+  - {fileID: 11400000, guid: 917c6f2973bc4114884e0706f77b6e17, type: 2}
+  - {fileID: 11400000, guid: b4635e4b171fb97428354a1b7e37738c, type: 2}
+  - {fileID: 11400000, guid: fb5e506e97b91c940a9f829adff784ea, type: 2}
+  - {fileID: 11400000, guid: cf8a5a8df3b30bc4f95b2a39b6c85db1, type: 2}
+  - {fileID: 11400000, guid: 97e9d55191c7ebb41a2868bc282ee924, type: 2}
+  - {fileID: 11400000, guid: 40965048a2ad5db48a09c0569f3a7b85, type: 2}
+  - {fileID: 11400000, guid: 1f7370500a3aa294289da8f6783dc6f9, type: 2}
+  - {fileID: 11400000, guid: d11681ba1f8ca91468a85d0e574ac204, type: 2}
+  - {fileID: 11400000, guid: 78c1626beccd9ec4ea6926d4556e28b6, type: 2}
+  - {fileID: 11400000, guid: 56fd05f402cfa3e4488390166da587f2, type: 2}
+  - {fileID: 11400000, guid: 7d508edd6e3831c4dac7b347b3a445d6, type: 2}
+  - {fileID: 11400000, guid: 820502f816dbbdb4283297eb811a2b23, type: 2}
+  - {fileID: 11400000, guid: d50130129de764b48a9dc5a9e3abff5a, type: 2}
+  - {fileID: 11400000, guid: 8e37b627f6cb94e4ca89a346784bf7c2, type: 2}
+  - {fileID: 11400000, guid: a9253d95cdd28d741b7b950a4c91338b, type: 2}
+  - {fileID: 11400000, guid: 779b50d251d4d8d43a7e8a854f32c7d9, type: 2}
 --- !u!1 &604016130
 GameObject:
   m_ObjectHideFlags: 0
@@ -4017,7 +4088,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 613935657}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 603939907}
+        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
+        m_MethodName: PickItem
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &613935657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7304,7 +7387,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1267330766}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 846037502}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 603939907}
+        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
+        m_MethodName: BuyItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1267330766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7502,7 +7609,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1292107242}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 603939907}
+        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
+        m_MethodName: PickItem
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1292107242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9680,7 +9799,43 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1589058068}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1669751552}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 40163203}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 603939907}
+        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
+        m_MethodName: ShowShop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1589058068
 MonoBehaviour:
   m_ObjectHideFlags: 0

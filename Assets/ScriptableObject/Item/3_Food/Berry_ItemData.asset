@@ -18,7 +18,7 @@ MonoBehaviour:
   explaination: "\uD55C \uAC1C \uC815\uB3C4"
   effect: "\uC2A4\uD53C\uB4DC +5"
   price: 0
-  isAcquired: 0
+  isAcquired: 1
   inventoryIndex: -1
   isEquipped: 0
   maxHp: 0
