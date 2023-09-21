@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5bbdbd6720fe074b862862288d7cd3d, type: 3}
-  m_Name: OldSword_ItemData
+  m_Name: Machete_ItemData
   m_EditorClassIdentifier: 
-  itemName: "\uB0A1\uC740 \uAC80"
+  itemName: "\uB9C8\uCCB4\uD14C"
   type: 1
-  image: {fileID: -267587109, guid: 6eb16e372762d6b4cb708c44ebfab931, type: 3}
-  explaination: "\uC0AC\uC6A9\uD55C \uD754\uC801\uC774 \uB0A8\uC544\uC788\uB2E4."
-  effect: "\uACF5\uACA9\uB825 +1"
-  price: 0
-  isAcquired: 1
+  image: {fileID: 503644337, guid: 6eb16e372762d6b4cb708c44ebfab931, type: 3}
+  explaination: "\uD718\uB450\uB974\uAE30 \uD3B8\uD558\uB2E4."
+  effect: "\uACF5\uACA9\uB825 +2\n\uC2A4\uD53C\uB4DC +10"
+  statChangers: {fileID: 11400000, guid: b02df5fbc0d9e014882f8e0b1f108a99, type: 2}
+  price: 1500
+  isAcquired: 0
+  inventoryIndex: -1
   isEquipped: 0

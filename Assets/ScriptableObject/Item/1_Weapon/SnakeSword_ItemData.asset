@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5bbdbd6720fe074b862862288d7cd3d, type: 3}
   m_Name: SnakeSword_ItemData
   m_EditorClassIdentifier: 
-  itemName: "\uBC40 \uAC80"
+  itemName: "\uC2A4\uB124\uC774\uD06C \uC18C\uB4DC"
   type: 1
   image: {fileID: 1936746835, guid: 6eb16e372762d6b4cb708c44ebfab931, type: 3}
   explaination: "\uBC40\uCC98\uB7FC \uC720\uC5F0\uD55C \uAC80."
   effect: "\uC2A4\uD53C\uB4DC +20"
+  statChangers: {fileID: 11400000, guid: baef63f91e2f3d347902aec9a6a27baa, type: 2}
   price: 1200
-  isAcquired: 1
+  isAcquired: 0
+  inventoryIndex: -1
   isEquipped: 0

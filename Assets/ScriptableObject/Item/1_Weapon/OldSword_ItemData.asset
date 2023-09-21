@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5bbdbd6720fe074b862862288d7cd3d, type: 3}
-  m_Name: Kiwi_ItemData
+  m_Name: OldSword_ItemData
   m_EditorClassIdentifier: 
-  itemName: "\uD0A4\uC704"
-  type: 3
-  image: {fileID: -462256797, guid: a03c2610221b14940b818fb271b448fa, type: 3}
-  explaination: 
+  itemName: "\uB0A1\uC740 \uAC80"
+  type: 1
+  image: {fileID: -267587109, guid: 6eb16e372762d6b4cb708c44ebfab931, type: 3}
+  explaination: "\uC0AC\uC6A9\uD55C \uD754\uC801\uC774 \uB0A8\uC544\uC788\uB2E4."
   effect: "\uACF5\uACA9\uB825 +1"
+  statChangers: {fileID: 11400000, guid: 4fc2885ede7659e43a34df614f31699f, type: 2}
   price: 0
   isAcquired: 1
+  inventoryIndex: -1
   isEquipped: 0

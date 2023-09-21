@@ -17,11 +17,15 @@ public class ItemSO : ScriptableObject
     public string itemName;
     public ItemType type;
     public Sprite image;
+    [Multiline(2)]
     public string explaination;
+    [Multiline(2)]
     public string effect;
+    public UnitStatsSO statChangers;
     public int price;
 
     [Header("Item Status")]
-    public bool isAcquired;
-    public bool isEquipped;
+    public bool isAcquired = false;
+    public int inventoryIndex = -1;
+    public bool isEquipped = false;
 }

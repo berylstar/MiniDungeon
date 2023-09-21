@@ -13,5 +13,6 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         hp = stats.MaxHp;
+        exp = 0;
     }
 }
