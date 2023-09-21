@@ -16,6 +16,7 @@ public class PlayerStatsUI : MonoBehaviour
     public TextMeshProUGUI textHP;
     public Slider expBar;
     public TextMeshProUGUI textEXP;
+    public TextMeshProUGUI textGold;
 
     [Header("Status UI")]
     [SerializeField] private TextMeshProUGUI textAP;
@@ -39,6 +40,7 @@ public class PlayerStatsUI : MonoBehaviour
         textHP.text = $"{player.hp}/{player.stats.MaxHp}";
         expBar.value = player.exp / (float)(player.stats.level + 5);
         textEXP.text = $"{player.exp}/{player.stats.level + 5}";
+        textGold.text = $"{player.stats.gold} G";
     }
 
     public void ShowPlayerStatus()

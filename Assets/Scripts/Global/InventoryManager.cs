@@ -7,7 +7,8 @@ using TMPro;
 public class InventoryManager : MonoBehaviour
 {
     private PlayerController player;
-    
+    [SerializeField] private ShopManager shop;
+
     [Header("Inventory")]
     [SerializeField] private PlayerStatsUI playerStatsUI;
 
@@ -18,8 +19,9 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textExplanation;
     [SerializeField] private TextMeshProUGUI textEffect;
 
-    public List<GameObject> inventoryButton = new List<GameObject>();
+    [SerializeField] private List<GameObject> inventoryButton = new List<GameObject>();
     public List<ItemSO> acquiredItems = new List<ItemSO>();
+
     private int ii = -1;
 
     private void Start()
@@ -28,13 +30,13 @@ public class InventoryManager : MonoBehaviour
 
         for (int i = 0; i < acquiredItems.Count; i++)
         {
+            acquiredItems[i] = Instantiate(acquiredItems[i]);
+
             inventoryButton[i].GetComponent<Image>().sprite = acquiredItems[i].image;
             acquiredItems[i].inventoryIndex = i;
             acquiredItems[i].isAcquired = true;
             acquiredItems[i].isEquipped = false;
         }
-
-        // 상점 새로고침
     }
 
     public void PickItem(int index)
@@ -56,7 +58,7 @@ public class InventoryManager : MonoBehaviour
         textEffect.text = acquiredItems[index].effect;
     }
 
-    public void ToggleItem(bool flag)
+    public void ToggleItem()
     {
         if (ii < 0)
             return;
@@ -66,7 +68,7 @@ public class InventoryManager : MonoBehaviour
         if (!nowItem.isAcquired)
             return;
 
-        if (flag == true) // 장착
+        if (nowItem.isEquipped == false) // 장착
         {
             if (player.items[(int)nowItem.type] != null)    // 장착 하기전에 같은 종류의 장비가 장착되어 있다면 먼저 해제
             {
@@ -76,13 +78,14 @@ public class InventoryManager : MonoBehaviour
             EffectOrUneffectItem(nowItem, true);
         }
 
-        else if (flag == false && player.items[(int)nowItem.type] != null) // 해제
+        else if (nowItem.isEquipped == true && player.items[(int)nowItem.type] != null) // 해제
         {
             EffectOrUneffectItem(nowItem, false);
         }
 
-        ii = -1;
+        nowItem.isEquipped = !nowItem.isEquipped;
 
+        ii = -1;
         playerStatsUI.ShowDefaultUI();
     }
 
@@ -93,5 +96,36 @@ public class InventoryManager : MonoBehaviour
         player.ChangeStats(data, onoff);
 
         inventoryButton[data.inventoryIndex].transform.GetChild(0).gameObject.SetActive(onoff);
+    }
+
+    public void SellItem()
+    {
+        ItemSO nowItem = acquiredItems[ii];
+
+        player.stats.gold += (int)(nowItem.price * 0.5f);
+        EffectOrUneffectItem(nowItem, false);
+
+        nowItem.isAcquired = false;
+        nowItem.isEquipped = false;
+
+        shop.forSaleItems.Add(nowItem);
+        acquiredItems.RemoveAt(ii);
+
+        ii = -1;
+
+        for (int i = 0; i < 10; i++)
+        {
+            if (i < acquiredItems.Count)
+            {
+                inventoryButton[i].GetComponent<Image>().sprite = acquiredItems[i].image;
+                acquiredItems[i].inventoryIndex = i;
+            }
+            else
+            {
+                inventoryButton[i].GetComponent<Image>().sprite = null;
+            }
+        }
+
+        playerStatsUI.ShowDefaultUI();
     }
 }
