@@ -4,30 +4,28 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class ItemManager : MonoBehaviour
+public class InventoryManager : MonoBehaviour
 {
-    [SerializeField] private PlayerController player;
+    private PlayerController player;
     
-
     [Header("Inventory")]
-    public List<GameObject> inventoryButton = new List<GameObject>();
-    public List<ItemSO> acquiredItems = new List<ItemSO>();
-
-    [Header("Shop")]
-    public List<ItemSO> forSaleItems = new List<ItemSO>();
-
-    [Header("Panel Pop Up")]
     [SerializeField] private PlayerStatsUI playerStatsUI;
+
     [SerializeField] private GameObject panelPopup;
     [SerializeField] private Image imagePopup;
     [SerializeField] private TextMeshProUGUI textName;
     [SerializeField] private TextMeshProUGUI textGold;
     [SerializeField] private TextMeshProUGUI textExplanation;
     [SerializeField] private TextMeshProUGUI textEffect;
-    private int popupIndex = -1;
+
+    public List<GameObject> inventoryButton = new List<GameObject>();
+    public List<ItemSO> acquiredItems = new List<ItemSO>();
+    private int ii = -1;
 
     private void Start()
     {
+        player = PlayerController.instance;
+
         for (int i = 0; i < acquiredItems.Count; i++)
         {
             inventoryButton[i].GetComponent<Image>().sprite = acquiredItems[i].image;
@@ -36,6 +34,7 @@ public class ItemManager : MonoBehaviour
             acquiredItems[i].isEquipped = false;
         }
 
+        // 상점 새로고침
     }
 
     public void PickItem(int index)
@@ -44,8 +43,8 @@ public class ItemManager : MonoBehaviour
             return;
 
         panelPopup.SetActive(true);
-        popupIndex = index;
-        ShowPanelPopup(popupIndex);
+        ii = index;
+        ShowPanelPopup(ii);
     }
 
     private void ShowPanelPopup(int index)
@@ -59,10 +58,10 @@ public class ItemManager : MonoBehaviour
 
     public void ToggleItem(bool flag)
     {
-        if (popupIndex < 0)
+        if (ii < 0)
             return;
 
-        ItemSO nowItem = acquiredItems[popupIndex];
+        ItemSO nowItem = acquiredItems[ii];
 
         if (!nowItem.isAcquired)
             return;
@@ -81,8 +80,8 @@ public class ItemManager : MonoBehaviour
         {
             EffectOrUneffectItem(nowItem, false);
         }
-        
-        popupIndex = -1;
+
+        ii = -1;
 
         playerStatsUI.ShowDefaultUI();
     }

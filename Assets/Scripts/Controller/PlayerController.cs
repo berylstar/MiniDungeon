@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
+
     [Header("Player Stat")]
     public UnitStatsSO stats;
     public int hp;
@@ -12,6 +14,8 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        instance = this;
+
         hp = stats.MaxHp;
         exp = 0;
     }

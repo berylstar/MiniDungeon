@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerStatsUI : MonoBehaviour
 {
-    [SerializeField] private PlayerController player;
+    private PlayerController player;
 
     [Header("Default UI")]
     public TextMeshProUGUI textNickname;
@@ -25,6 +25,8 @@ public class PlayerStatsUI : MonoBehaviour
 
     private void Start()
     {
+        player = PlayerController.instance;
+
         ShowDefaultUI();
     }
 

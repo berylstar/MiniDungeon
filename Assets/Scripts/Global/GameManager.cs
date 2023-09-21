@@ -6,5 +6,10 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private PlayerController player;
+    private PlayerController player;
+
+    private void Start()
+    {
+        player = PlayerController.instance;
+    }
 }
