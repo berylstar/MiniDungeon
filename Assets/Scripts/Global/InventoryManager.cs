@@ -11,8 +11,8 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private ShopManager shop;
 
     [Header("Inventory")]
-    [SerializeField] private GameObject panelPopup;
     [SerializeField] private Image imagePopup;
+    [SerializeField] private TextMeshProUGUI textInventoryLimit;
     [SerializeField] private TextMeshProUGUI textName;
     [SerializeField] private TextMeshProUGUI textGold;
     [SerializeField] private TextMeshProUGUI textExplanation;
@@ -21,7 +21,7 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private List<GameObject> inventoryButton = new List<GameObject>();
     public List<ItemSO> acquiredItems = new List<ItemSO>();
 
-    private int ii = -1;
+    private int ii = -1;    // inventory index
 
     private void Start()
     {
@@ -31,24 +31,26 @@ public class InventoryManager : MonoBehaviour
         {
             acquiredItems[i] = Instantiate(acquiredItems[i]);
         }
-
-        ShowInventory();
     }
 
+    // 획득한 아이템만 보이게
     public void ShowInventory()
     {
         for (int i = 0; i < 10; i++)
         {
             if (i < acquiredItems.Count)
             {
+                inventoryButton[i].SetActive(true);
                 inventoryButton[i].GetComponent<Image>().sprite = acquiredItems[i].image;
                 acquiredItems[i].inventoryIndex = i;
             }
             else
             {
-                inventoryButton[i].GetComponent<Image>().sprite = null;
+                inventoryButton[i].SetActive(false);
             }
         }
+
+        textInventoryLimit.text = $"{acquiredItems.Count}/10";
     }
 
     public void PickItem(int index)
@@ -56,7 +58,6 @@ public class InventoryManager : MonoBehaviour
         if (index >= acquiredItems.Count)
             return;
 
-        panelPopup.SetActive(true);
         ii = index;
         ShowPanelPopup(ii);
     }
@@ -70,6 +71,7 @@ public class InventoryManager : MonoBehaviour
         textEffect.text = acquiredItems[index].effect;
     }
 
+    // 아이템 장착 / 해제 메소드
     public void ToggleItem()
     {
         if (ii < 0)
@@ -95,27 +97,29 @@ public class InventoryManager : MonoBehaviour
             EffectOrUneffectItem(nowItem, false);
         }
 
-        nowItem.isEquipped = !nowItem.isEquipped;
-
         ii = -1;
         playerStatsUI.ShowDefaultUI();
     }
 
-    private void EffectOrUneffectItem(ItemSO data, bool onoff)
+    private void EffectOrUneffectItem(ItemSO nowItem, bool onoff)
     {
-        player.items[(int)data.type] = (onoff) ? data : null;
+        player.items[(int)nowItem.type] = (onoff) ? nowItem : null;
 
-        player.ChangeStats(data, onoff);
+        player.ChangeStats(nowItem, onoff);
 
-        inventoryButton[data.inventoryIndex].transform.GetChild(0).gameObject.SetActive(onoff);
+        nowItem.isEquipped = !nowItem.isEquipped;
+
+        inventoryButton[nowItem.inventoryIndex].transform.GetChild(0).gameObject.SetActive(onoff);
     }
 
     public void SellItem()
     {
         ItemSO nowItem = acquiredItems[ii];
 
-        player.stats.gold += (int)(nowItem.price * 0.5f);
-        EffectOrUneffectItem(nowItem, false);
+        player.stats.gold += nowItem.price / 2;
+
+        if (nowItem.isEquipped)
+            EffectOrUneffectItem(nowItem, false);
 
         shop.GetSoldItem(nowItem);
         acquiredItems.RemoveAt(ii);
@@ -126,9 +130,11 @@ public class InventoryManager : MonoBehaviour
         ShowInventory();
     }
 
+    // ShopManager에서 실행할 메소드
     public void GetBuyItem(ItemSO nowItem)
     {
         nowItem.isAcquired = true;
+        nowItem.isEquipped = false;
         acquiredItems.Add(nowItem);
     }
 }

@@ -11,13 +11,13 @@ public class ShopManager : MonoBehaviour
     [SerializeField] private InventoryManager inven;
 
     [Header("Shop")]
-    [SerializeField] private GameObject panelPopup;
     [SerializeField] private Image imagePopup;
     [SerializeField] private TextMeshProUGUI textName;
     [SerializeField] private TextMeshProUGUI textGold;
     [SerializeField] private TextMeshProUGUI textExplanation;
     [SerializeField] private TextMeshProUGUI textEffect;
     [SerializeField] private Button buttonBuy;
+    [SerializeField] private GameObject panelBuyPopup;
 
     [SerializeField] private List<GameObject> shopButton = new List<GameObject>();
     public List<ItemSO> forSaleItems = new List<ItemSO>();
@@ -33,7 +33,6 @@ public class ShopManager : MonoBehaviour
         }
 
         ShuffleSaleList();
-        ShowShop();
     }
 
     private void ShuffleSaleList()
@@ -58,10 +57,9 @@ public class ShopManager : MonoBehaviour
 
     public void PickItem(int index)
     {
-        if (index >= 5)
+        if (index < 0 || index >= 5)
             return;
 
-        panelPopup.SetActive(true);
         si = index;
         ShowPanelPopup(si);
     }
@@ -82,15 +80,29 @@ public class ShopManager : MonoBehaviour
         inven.GetBuyItem(forSaleItems[si]);
         forSaleItems.RemoveAt(si);
 
+        si = -1;
+
         playerStatsUI.ShowDefaultUI();
+        StartCoroutine(CoShowBuyPopup());
         ShowShop();
     }
 
+    // InventoryManager에서 실행할 메소드
     public void GetSoldItem(ItemSO nowItem)
     {
         nowItem.isAcquired = false;
         nowItem.isEquipped = false;
 
         forSaleItems.Add(nowItem);
+    }
+
+    // 구매 완료 팝업
+    IEnumerator CoShowBuyPopup()
+    {
+        panelBuyPopup.SetActive(true);
+
+        yield return new WaitForSeconds(1);
+
+        panelBuyPopup.SetActive(false);
     }
 }

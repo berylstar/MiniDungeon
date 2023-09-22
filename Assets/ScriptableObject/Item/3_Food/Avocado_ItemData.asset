@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: "\uC544\uBCF4\uCE74\uB3C4"
   type: 3
   image: {fileID: -1347541644, guid: a03c2610221b14940b818fb271b448fa, type: 3}
-  explaination: 
+  explaination: "\uC798 \uC775\uC740 \uC544\uBCF4\uCE74\uB3C4."
   effect: "\uCD5C\uB300\uCCB4\uB825 +20"
   price: 1500
   isAcquired: 0
