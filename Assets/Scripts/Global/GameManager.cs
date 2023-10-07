@@ -16,4 +16,14 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("IntroScene");
     }
+
+    public void EnterDungeon()
+    {
+        SceneManager.LoadScene("BattleScene");
+    }
+
+    public void BackToMain()
+    {
+        SceneManager.LoadScene("MainScene");
+    }
 }
